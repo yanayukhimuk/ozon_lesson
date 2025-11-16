@@ -1,0 +1,2 @@
+(()=>{"use strict";var e,t,c;e=document.getElementById("cart"),t=document.querySelector(".cart"),c=t.querySelector(".cart-close"),e.addEventListener("click",function(){t.style.display="flex"}),c.addEventListener("click",function(){t.style.display=""})})();
+//# sourceMappingURL=bundle.js.map
