@@ -1,2 +1,2 @@
-(()=>{"use strict";var e,t,c;e=document.getElementById("cart"),t=document.querySelector(".cart"),c=t.querySelector(".cart-close"),e.addEventListener("click",function(){t.style.display="flex"}),c.addEventListener("click",function(){t.style.display=""})})();
+(()=>{"use strict";var t,e,n;t=document.getElementById("cart"),e=document.querySelector(".cart"),n=e.querySelector(".cart-close"),t.addEventListener("click",function(){e.style.display="flex"}),n.addEventListener("click",function(){e.style.display=""}),document.getElementById("cart").addEventListener("click",function(){fetch("http://localhost:3000/goods").then(function(t){return t.json()}).then(function(t){console.log(t)})})})();
 //# sourceMappingURL=bundle.js.map
