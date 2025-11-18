@@ -1,5 +1,5 @@
-const postData = () => {
-    return fetch('https://test-e6b54-default-rtdb.firebaseio.com/goods', {
+const postData = async () => {
+    const response = await fetch('https://test-e6b54-default-rtdb.firebaseio.com/goods.json', {
         method: 'POST',
         body: JSON.stringify({
             title: "Игра Onrush (PS4 Sony)",
@@ -12,7 +12,7 @@ const postData = () => {
             'Content-type': 'application/json; charset=UTF-8',
         },
     })
-        .then(response => response.json())
+    return await response.json()
 }
 
 export default postData
