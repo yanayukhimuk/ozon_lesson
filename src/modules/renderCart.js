@@ -4,9 +4,12 @@ const renderCart = (goods) => {
 	cartWrapper.innerHTML = ''
 
 	if (goods.length === 0) {
-
-	}
-	else {
+		cartWrapper.insertAdjacentHTML('beforeend',
+			`<div id="cart-empty">
+					Ваша корзина пока пуста
+				</div>`
+		)
+	} else {
 		goods.forEach((goodsItem) => {
 			cartWrapper.insertAdjacentHTML('beforeend',
 				`<div class="card" data-key="${goodsItem.id}">
@@ -17,11 +20,9 @@ const renderCart = (goods) => {
 									<div class="card-body justify-content-between">
 										<div class="card-price">${goodsItem.price} ₽</div>
 										<h5 class="card-title">${goodsItem.title}</h5>
-										<button class="btn btn-primary">В корзину</button>
+										<button class="btn btn-primary">Удалить</button>
 									</div>
-								</div>
-            `
-			)
+								</div>`)
 		});
 	}
 }
