@@ -1,5 +1,5 @@
 import getData from "./getData.js"
-import renderCart from "./renderCart.js"
+import renderGoods from "./renderGoods.js"
 import { priceFilter, checkBoxFilter } from "./filters.js"
 
 const filter = () => {
@@ -10,13 +10,13 @@ const filter = () => {
 
     minInput.addEventListener('input', () => {
         getData().then((data) => {
-            renderCart(priceFilter(checkBoxFilter(data, checkBoxInput.checked), minInput.value, maxInput.value))
+            renderGoods(priceFilter(checkBoxFilter(data, checkBoxInput.checked), minInput.value, maxInput.value))
         })
     })
 
     maxInput.addEventListener('input', () => {
         getData().then((data) => {
-            renderCart(priceFilter(checkBoxFilter(data, checkBoxInput.checked), minInput.value, maxInput.value))
+            renderGoods(priceFilter(checkBoxFilter(data, checkBoxInput.checked), minInput.value, maxInput.value))
         })
     })
 
@@ -28,7 +28,7 @@ const filter = () => {
         }
 
         getData().then((data) => {
-            renderCart(priceFilter(checkBoxFilter(data, checkBoxInput.checked), minInput.value, maxInput.value))
+            renderGoods(priceFilter(checkBoxFilter(data, checkBoxInput.checked), minInput.value, maxInput.value))
         })
     })
 }
