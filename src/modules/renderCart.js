@@ -1,11 +1,15 @@
-const renderGoods = (goods) => {
-    const goodsWrapper = document.querySelector('.goods')
-    goodsWrapper.innerHTML = ''
+const renderCart = (goods) => {
+	const cartWrapper = document.querySelector('.cart-wrapper')
 
-    goods.forEach((goodsItem) => {
-        goodsWrapper.insertAdjacentHTML('beforeend',
-            `<div class="col-12 col-md-6 col-lg-4 col-xl-3">
-								<div class="card">
+	cartWrapper.innerHTML = ''
+
+	if (goods.length === 0) {
+
+	}
+	else {
+		goods.forEach((goodsItem) => {
+			cartWrapper.insertAdjacentHTML('beforeend',
+				`<div class="card" data-key="${goodsItem.id}">
                                 ${goodsItem.sale ? '<div class="card-sale">🔥Hot Sale🔥</div>' : ''}
 									<div class="card-img-wrapper">
 										<span class="card-img-top" style="background-image: url('${goodsItem.img}')"></span>
@@ -16,10 +20,10 @@ const renderGoods = (goods) => {
 										<button class="btn btn-primary">В корзину</button>
 									</div>
 								</div>
-							</div>
             `
-        )
-    });
+			)
+		});
+	}
 }
 
-export default renderGoods
+export default renderCart

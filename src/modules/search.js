@@ -1,5 +1,5 @@
 import getData from "./getData.js"
-import renderGoods from "./renderGoods.js"
+import renderCart from "./renderCart.js"
 import { searchFilter } from "./filters.js"
 
 const search = () => {
@@ -9,7 +9,7 @@ const search = () => {
         const value = event.target.value;
 
         getData().then((data) => {
-            renderGoods(searchFilter(data, value))
+            renderCart(searchFilter(data, value))
         })
     })
 }
