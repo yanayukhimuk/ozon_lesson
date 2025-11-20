@@ -1,5 +1,5 @@
 import getData from "./getData.js"
-import renderGoods from "./renderGoods.js"
+import renderCart from "./renderCart.js"
 import { categoryFilter } from "./filters.js"
 
 const catalog = () => {
@@ -25,7 +25,7 @@ const catalog = () => {
             const text = item.textContent
 
             getData().then((data) => {
-                renderGoods(categoryFilter(data, text))
+                renderCart(categoryFilter(data, text))
             })
         })
     })

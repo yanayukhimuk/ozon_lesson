@@ -1,11 +1,12 @@
 import getData from "./getData.js"
-import renderGoods from "./renderGoods.js"
+import renderCart from "./renderCart.js"
 
 const load = () => {
     const cartBtn = document.getElementById('cart')
 
     getData().then((data) => {
-        renderGoods(data)
+        localStorage.setItem('goods', JSON.stringify(data))
+        renderCart(data)
     })
 }
 
